@@ -1,0 +1,7 @@
+Category,Observed,Question,Final user-visible output,Action sequence
+Correct answer accepted,True,What is needed to pack electrons densely together?,energy,accept
+Safe abstention on an unanswerable question,True,How is time not required to solve a problem calculated?,[ABSTAIN],abstain
+Successful diagnostic regeneration,True,Who has the Islamic Liberation Party attempted to assassinate? ,political figures,regenerate -> accept
+Protective abstention after an unsafe first answer,True,What do clinical pharmacists not specialize in?,[ABSTAIN],abstain
+False abstention on an answerable question,True,What reference is there to Huguenot lacemakers in the 19th century?,[ABSTAIN],abstain
+Accepted unsupported answer,True,Why does the government restrain itself when engaging in disobedience?,To avoid undermining the system's functionality and to maintain moral dialogue.,accept

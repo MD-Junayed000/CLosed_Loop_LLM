@@ -1,0 +1,6 @@
+policy,stage,answerability_accuracy,answerable_coverage,false_abstention_rate,unanswerable_abstention_accuracy,false_answer_rate,answerable_overall_f1,delivered_answerable_f1
+Vanilla Qwen,first_pass,0.655,0.98,0.02,0.33,0.67,0.87394858,0.891784265
+Answerability gate only,first_pass,0.867,0.884,0.116,0.85,0.15,0.795527929,0.899918471
+External verification without CEV/IAV,first_pass,0.866,0.882,0.118,0.85,0.15,0.795027929,0.901392209
+Full signals with CEV/IAV,first_pass,0.866,0.882,0.118,0.85,0.15,0.795027929,0.901392209
+Full multi-action Controller-v5,multi_action,0.858,0.89,0.11,0.826,0.174,0.802064966,0.901196591

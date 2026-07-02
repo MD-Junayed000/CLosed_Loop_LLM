@@ -1,0 +1,187 @@
+[
+  {
+    "category": "Correct answer accepted",
+    "description": "An answerable question for which the controller delivered a high-quality answer.",
+    "observed": true,
+    "squad_id": "5737958b1c456719005744c5",
+    "question": "What is needed to pack electrons densely together?",
+    "is_answerable": true,
+    "gold_answers": "energy | energy | energy | energy",
+    "vanilla_first_response": "energy",
+    "final_user_visible_output": "energy",
+    "final_status": "accepted",
+    "terminal_reason": "passed_calibrated_quality_and_answerability_gates",
+    "action_sequence": "accept",
+    "vanilla_token_f1": 1.0,
+    "controller_token_f1": 1.0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "energy",
+        "action": "accept",
+        "action_reason": "passed_calibrated_quality_and_answerability_gates",
+        "no_answer_probability": 0.04740682616829872,
+        "candidate_bad_probability": 0.09564253687858582,
+        "fused_hallucination_probability": 0.3712676986051656,
+        "support_score": 0.026819556951522827,
+        "relevance_score": 0.00010685719181093765
+      }
+    ]
+  },
+  {
+    "category": "Safe abstention on an unanswerable question",
+    "description": "The assigned paragraph does not answer the question, and the controller withheld an unsupported response.",
+    "observed": true,
+    "squad_id": "5ad541ad5b96ef001a10abee",
+    "question": "How is time not required to solve a problem calculated?",
+    "is_answerable": false,
+    "gold_answers": "",
+    "vanilla_first_response": "as a function of the size of the instance",
+    "final_user_visible_output": "[ABSTAIN]",
+    "final_status": "abstained",
+    "terminal_reason": "evidence_predicted_unanswerable",
+    "action_sequence": "abstain",
+    "vanilla_token_f1": null,
+    "controller_token_f1": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "as a function of the size of the instance",
+        "action": "abstain",
+        "action_reason": "evidence_predicted_unanswerable",
+        "no_answer_probability": 0.999968409538269,
+        "candidate_bad_probability": 0.9813521504402161,
+        "fused_hallucination_probability": 0.19264660684164261,
+        "support_score": 0.0029045436531305313,
+        "relevance_score": 1.7470240419691056e-05
+      }
+    ]
+  },
+  {
+    "category": "Successful diagnostic regeneration",
+    "description": "The controller rejected the first candidate, regenerated once with diagnostic feedback, and improved answer quality.",
+    "observed": true,
+    "squad_id": "5730131c947a6a140053d056",
+    "question": "Who has the Islamic Liberation Party attempted to assassinate? ",
+    "is_answerable": true,
+    "gold_answers": "political figures | political figures | political figures",
+    "vanilla_first_response": "[ABSTAIN]",
+    "final_user_visible_output": "political figures",
+    "final_status": "accepted",
+    "terminal_reason": "passed_calibrated_quality_and_answerability_gates",
+    "action_sequence": "regenerate -> accept",
+    "vanilla_token_f1": 0.0,
+    "controller_token_f1": 1.0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "[ABSTAIN]",
+        "action": "regenerate",
+        "action_reason": "refusal_but_answerable",
+        "no_answer_probability": 0.04393509775400162,
+        "candidate_bad_probability": 0.00024389538157265633,
+        "fused_hallucination_probability": 0.07375976222689477,
+        "support_score": 0.0,
+        "relevance_score": 0.0
+      },
+      {
+        "attempt": 2,
+        "candidate_response": "political figures",
+        "action": "accept",
+        "action_reason": "passed_calibrated_quality_and_answerability_gates",
+        "no_answer_probability": 0.04393509775400162,
+        "candidate_bad_probability": 0.1037389412522316,
+        "fused_hallucination_probability": 0.3023050254659675,
+        "support_score": 0.0020066238939762115,
+        "relevance_score": 2.8947413235449886e-05
+      }
+    ]
+  },
+  {
+    "category": "Protective abstention after an unsafe first answer",
+    "description": "Vanilla generation answered an unanswerable question, but the controller's final output was abstention.",
+    "observed": true,
+    "squad_id": "5a6ce1ca4eec6b001a80a66f",
+    "question": "What do clinical pharmacists not specialize in?",
+    "is_answerable": false,
+    "gold_answers": "",
+    "vanilla_first_response": "pediatrics",
+    "final_user_visible_output": "[ABSTAIN]",
+    "final_status": "abstained",
+    "terminal_reason": "evidence_predicted_unanswerable",
+    "action_sequence": "abstain",
+    "vanilla_token_f1": null,
+    "controller_token_f1": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "pediatrics",
+        "action": "abstain",
+        "action_reason": "evidence_predicted_unanswerable",
+        "no_answer_probability": 0.9999574422836304,
+        "candidate_bad_probability": 0.9971017241477966,
+        "fused_hallucination_probability": 0.6486421737996038,
+        "support_score": 0.0006917769787833095,
+        "relevance_score": 2.898094584689855e-05
+      }
+    ]
+  },
+  {
+    "category": "False abstention on an answerable question",
+    "description": "The question was answerable from its paragraph, but the controller withheld the response.",
+    "observed": true,
+    "squad_id": "571098f8a58dae1900cd6ab4",
+    "question": "What reference is there to Huguenot lacemakers in the 19th century?",
+    "is_answerable": true,
+    "gold_answers": "twenty-five widows who settled in Dover | twenty-five widows who settled in Dover | twenty-five widows who settled in Dover",
+    "vanilla_first_response": "twenty-five widows who settled in Dover",
+    "final_user_visible_output": "[ABSTAIN]",
+    "final_status": "abstained",
+    "terminal_reason": "evidence_predicted_unanswerable",
+    "action_sequence": "abstain",
+    "vanilla_token_f1": 1.0,
+    "controller_token_f1": 0.0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "twenty-five widows who settled in Dover",
+        "action": "abstain",
+        "action_reason": "evidence_predicted_unanswerable",
+        "no_answer_probability": 0.8279863595962524,
+        "candidate_bad_probability": 0.971448540687561,
+        "fused_hallucination_probability": 0.5236700482920015,
+        "support_score": 0.9682202339172363,
+        "relevance_score": 1.138165549003718e-05
+      }
+    ]
+  },
+  {
+    "category": "Accepted unsupported answer",
+    "description": "The SQuAD-v2 item is unanswerable from its assigned paragraph, but the controller still delivered a response.",
+    "observed": true,
+    "squad_id": "5a6681d1f038b7001ab0bf04",
+    "question": "Why does the government restrain itself when engaging in disobedience?",
+    "is_answerable": false,
+    "gold_answers": "",
+    "vanilla_first_response": "To avoid undermining the system's functionality and to maintain moral dialogue.",
+    "final_user_visible_output": "To avoid undermining the system's functionality and to maintain moral dialogue.",
+    "final_status": "accepted",
+    "terminal_reason": "passed_calibrated_quality_and_answerability_gates",
+    "action_sequence": "accept",
+    "vanilla_token_f1": null,
+    "controller_token_f1": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "To avoid undermining the system's functionality and to maintain moral dialogue.",
+        "action": "accept",
+        "action_reason": "passed_calibrated_quality_and_answerability_gates",
+        "no_answer_probability": 0.5051111578941345,
+        "candidate_bad_probability": 0.964432418346405,
+        "fused_hallucination_probability": 0.08984111247673811,
+        "support_score": 0.004697715863585472,
+        "relevance_score": 4.155106724527278e-05
+      }
+    ]
+  }
+]

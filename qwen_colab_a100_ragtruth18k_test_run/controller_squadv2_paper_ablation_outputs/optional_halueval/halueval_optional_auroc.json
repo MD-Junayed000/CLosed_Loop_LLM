@@ -1,0 +1,13 @@
+{
+  "dataset": "pminervini/HaluEval:qa",
+  "split": "data",
+  "n_pairs": 10000,
+  "n_scored_answers": 20000,
+  "cev_auroc_raw": 0.7172692,
+  "iav_auroc_raw": 0.6150038500000001,
+  "fused_auroc_raw": 0.68300746,
+  "fused_auroc_ci_95_lower": 0.6757320585678173,
+  "fused_auroc_ci_95_upper": 0.6903740706486742,
+  "training_or_calibration_use": false,
+  "score_orientation": "higher score means greater hallucination risk; no HaluEval-dependent polarity flipping"
+}

@@ -1,0 +1,10 @@
+{
+  "source": "rajpurkar/squad_v2:train",
+  "answerability_answerable": 750,
+  "answerability_unanswerable": 750,
+  "retrieval_calibration_answerable": 1500,
+  "controller_dev_answerable": 500,
+  "controller_dev_unanswerable": 500,
+  "all_partitions_pairwise_disjoint": true,
+  "partition_seed": 119
+}

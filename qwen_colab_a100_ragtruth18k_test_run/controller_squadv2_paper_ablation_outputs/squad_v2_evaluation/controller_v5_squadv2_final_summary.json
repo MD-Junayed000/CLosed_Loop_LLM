@@ -1,0 +1,57 @@
+{
+  "n_total": 1000,
+  "n_answerable": 500,
+  "n_unanswerable": 500,
+  "vanilla_answerability_accuracy": 0.655,
+  "controller_answerability_accuracy": 0.858,
+  "vanilla_answerable_coverage": 0.98,
+  "controller_answerable_coverage": 0.89,
+  "vanilla_false_abstention_rate": 0.020000000000000018,
+  "controller_false_abstention_rate": 0.10999999999999999,
+  "vanilla_unanswerable_abstention_accuracy": 0.32999999999999996,
+  "controller_unanswerable_abstention_accuracy": 0.8260000000000001,
+  "vanilla_false_answer_rate": 0.67,
+  "controller_false_answer_rate": 0.174,
+  "vanilla_answerable_exact_match_overall": 0.77,
+  "controller_answerable_exact_match_overall": 0.714,
+  "vanilla_answerable_token_f1_overall": 0.882312311882163,
+  "controller_answerable_token_f1_overall": 0.8020649656512505,
+  "controller_answerable_token_f1_among_delivered": 0.9011965906193825,
+  "vanilla_mean_latency_sec": 0.4593090090119988,
+  "controller_mean_latency_sec": 0.4868881135250033,
+  "vanilla_p95_latency_sec": 1.0680913664999703,
+  "controller_p95_latency_sec": 1.0882154886998932,
+  "action_counts_across_attempts": {
+    "accept": 532,
+    "abstain": 468,
+    "regenerate": 30
+  },
+  "terminal_reason_counts": {
+    "passed_calibrated_quality_and_answerability_gates": 532,
+    "evidence_predicted_unanswerable": 313,
+    "answerability_supported_abstention": 147,
+    "invalid_output_no_repair_budget": 3,
+    "repeated_candidate_no_new_information": 1,
+    "answerable_refusal_no_budget": 4
+  },
+  "paired_bootstrap_answerability_accuracy_change": {
+    "mean_difference": 0.203,
+    "ci_lower": 0.167975,
+    "ci_upper": 0.237
+  },
+  "paired_bootstrap_false_answer_rate_change": {
+    "mean_difference": -0.496,
+    "ci_lower": -0.54,
+    "ci_upper": -0.448
+  },
+  "paired_bootstrap_answerable_f1_change": {
+    "mean_difference": -0.08024734623091244,
+    "ci_lower": -0.104481009231751,
+    "ci_upper": -0.059026554614041826
+  },
+  "paired_bootstrap_answerable_coverage_change": {
+    "mean_difference": -0.09,
+    "ci_lower": -0.11804999999999999,
+    "ci_upper": -0.06395000000000005
+  }
+}
