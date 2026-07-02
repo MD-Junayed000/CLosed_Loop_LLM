@@ -1,0 +1,18 @@
+{
+  "split": "wandb/RAGTruth-processed:test",
+  "n_examples": 2700,
+  "cev_auroc": 0.878691566109445,
+  "iav_auroc": 0.8804147144190998,
+  "fused_auroc": 0.8819193759728545,
+  "fused_auroc_ci_95_lower": 0.8687031062033678,
+  "fused_auroc_ci_95_upper": 0.8945744378582746,
+  "fused_auprc": 0.8122539810249472,
+  "accuracy": 0.784074074074074,
+  "balanced_accuracy": 0.7920866149098501,
+  "precision": 0.652027027027027,
+  "recall": 0.8186638388123012,
+  "f1": 0.7259050305594734,
+  "brier_score": 0.13280450376493957,
+  "ece_10_bins": 0.0643044410648737,
+  "decision_threshold_from_train_oof": 0.3713131313131313
+}

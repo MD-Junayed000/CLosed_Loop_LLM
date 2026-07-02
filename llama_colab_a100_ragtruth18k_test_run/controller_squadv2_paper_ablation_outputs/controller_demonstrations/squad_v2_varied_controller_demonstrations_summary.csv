@@ -1,0 +1,7 @@
+Category,Observed,Question,Final user-visible output,Action sequence
+Correct answer accepted,True,What is QED short for?,quantum electrodynamics,accept
+Safe abstention on an unanswerable question,True,How is time not required to solve a problem calculated?,[ABSTAIN],abstain
+Successful diagnostic regeneration,True,"What is the complex ""two-signal"" activation of T cells referred to?",histocompatibility,regenerate -> accept
+Protective abstention after an unsafe first answer,True,What wasn't Marin's orders?,[ABSTAIN],abstain
+False abstention on an answerable question,True,What is the original meaning of the word Norman?,[ABSTAIN],abstain
+Accepted unsupported answer,True, When did the age of Imperialism end?,The middle of the 20th century.,accept

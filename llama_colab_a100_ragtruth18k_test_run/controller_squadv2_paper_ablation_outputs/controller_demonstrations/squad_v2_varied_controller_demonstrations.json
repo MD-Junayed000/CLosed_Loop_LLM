@@ -1,0 +1,187 @@
+[
+  {
+    "category": "Correct answer accepted",
+    "description": "An answerable question for which the controller delivered a high-quality answer.",
+    "observed": true,
+    "squad_id": "573792ee1c456719005744bd",
+    "question": "What is QED short for?",
+    "is_answerable": true,
+    "gold_answers": "quantum electrodynamics | quantum electrodynamics | quantum electrodynamics | quantum electrodynamics",
+    "vanilla_first_response": "quantum electrodynamics",
+    "final_user_visible_output": "quantum electrodynamics",
+    "final_status": "accepted",
+    "terminal_reason": "passed_calibrated_quality_and_answerability_gates",
+    "action_sequence": "accept",
+    "vanilla_token_f1": 1.0,
+    "controller_token_f1": 1.0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "quantum electrodynamics",
+        "action": "accept",
+        "action_reason": "passed_calibrated_quality_and_answerability_gates",
+        "no_answer_probability": 0.02298097312450409,
+        "candidate_bad_probability": 0.11748073995113373,
+        "fused_hallucination_probability": 0.18613183987589232,
+        "support_score": 0.11658284068107605,
+        "relevance_score": 0.0003402661387227292
+      }
+    ]
+  },
+  {
+    "category": "Safe abstention on an unanswerable question",
+    "description": "The assigned paragraph does not answer the question, and the controller withheld an unsupported response.",
+    "observed": true,
+    "squad_id": "5ad541ad5b96ef001a10abee",
+    "question": "How is time not required to solve a problem calculated?",
+    "is_answerable": false,
+    "gold_answers": "",
+    "vanilla_first_response": "As a function of the size of the instance.",
+    "final_user_visible_output": "[ABSTAIN]",
+    "final_status": "abstained",
+    "terminal_reason": "evidence_predicted_unanswerable",
+    "action_sequence": "abstain",
+    "vanilla_token_f1": null,
+    "controller_token_f1": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "As a function of the size of the instance.",
+        "action": "abstain",
+        "action_reason": "evidence_predicted_unanswerable",
+        "no_answer_probability": 0.999968409538269,
+        "candidate_bad_probability": 0.9758791923522949,
+        "fused_hallucination_probability": 0.057290679882708785,
+        "support_score": 0.0032729038503021,
+        "relevance_score": 1.664007077298216e-05
+      }
+    ]
+  },
+  {
+    "category": "Successful diagnostic regeneration",
+    "description": "The controller rejected the first candidate, regenerated once with diagnostic feedback, and improved answer quality.",
+    "observed": true,
+    "squad_id": "572a02483f37b3190047864d",
+    "question": "What is the complex \"two-signal\" activation of T cells referred to?",
+    "is_answerable": true,
+    "gold_answers": "histocompatibility | histocompatibility | histocompatibility",
+    "vanilla_first_response": "[ABSTAIN]",
+    "final_user_visible_output": "histocompatibility",
+    "final_status": "accepted",
+    "terminal_reason": "passed_calibrated_quality_and_answerability_gates",
+    "action_sequence": "regenerate -> accept",
+    "vanilla_token_f1": 0.0,
+    "controller_token_f1": 1.0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "[ABSTAIN]",
+        "action": "regenerate",
+        "action_reason": "refusal_but_answerable",
+        "no_answer_probability": 0.061796966940164566,
+        "candidate_bad_probability": 0.0008459137752652168,
+        "fused_hallucination_probability": 0.2968953025929103,
+        "support_score": 0.0,
+        "relevance_score": 0.0
+      },
+      {
+        "attempt": 2,
+        "candidate_response": "histocompatibility",
+        "action": "accept",
+        "action_reason": "passed_calibrated_quality_and_answerability_gates",
+        "no_answer_probability": 0.061796966940164566,
+        "candidate_bad_probability": 0.13858334720134735,
+        "fused_hallucination_probability": 0.2797626442312084,
+        "support_score": 0.0260731540620327,
+        "relevance_score": 5.127989679682874e-05
+      }
+    ]
+  },
+  {
+    "category": "Protective abstention after an unsafe first answer",
+    "description": "Vanilla generation answered an unanswerable question, but the controller's final output was abstention.",
+    "observed": true,
+    "squad_id": "5ad3ade2604f3c001a3fec18",
+    "question": "What wasn't Marin's orders?",
+    "is_answerable": false,
+    "gold_answers": "",
+    "vanilla_first_response": "Protect the King's land in the Ohio Valley from the French.",
+    "final_user_visible_output": "[ABSTAIN]",
+    "final_status": "abstained",
+    "terminal_reason": "evidence_predicted_unanswerable",
+    "action_sequence": "abstain",
+    "vanilla_token_f1": null,
+    "controller_token_f1": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "Protect the King's land in the Ohio Valley from the French.",
+        "action": "abstain",
+        "action_reason": "evidence_predicted_unanswerable",
+        "no_answer_probability": 0.9999488592147827,
+        "candidate_bad_probability": 0.9788289070129395,
+        "fused_hallucination_probability": 0.18412209621267783,
+        "support_score": 0.011392081156373024,
+        "relevance_score": 1.4186641198938427e-05
+      }
+    ]
+  },
+  {
+    "category": "False abstention on an answerable question",
+    "description": "The question was answerable from its paragraph, but the controller withheld the response.",
+    "observed": true,
+    "squad_id": "56dde0379a695914005b9636",
+    "question": "What is the original meaning of the word Norman?",
+    "is_answerable": true,
+    "gold_answers": "Viking | Norseman, Viking | Norseman, Viking",
+    "vanilla_first_response": "Norseman, Viking.",
+    "final_user_visible_output": "[ABSTAIN]",
+    "final_status": "abstained",
+    "terminal_reason": "evidence_predicted_unanswerable",
+    "action_sequence": "abstain",
+    "vanilla_token_f1": 1.0,
+    "controller_token_f1": 0.0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "Norseman, Viking.",
+        "action": "abstain",
+        "action_reason": "evidence_predicted_unanswerable",
+        "no_answer_probability": 0.5459907650947571,
+        "candidate_bad_probability": 0.6294839978218079,
+        "fused_hallucination_probability": 0.08116337777811393,
+        "support_score": 0.017645251005887985,
+        "relevance_score": 6.7537351206413e-05
+      }
+    ]
+  },
+  {
+    "category": "Accepted unsupported answer",
+    "description": "The SQuAD-v2 item is unanswerable from its assigned paragraph, but the controller still delivered a response.",
+    "observed": true,
+    "squad_id": "5ad02de177cf76001a686d14",
+    "question": " When did the age of Imperialism end?",
+    "is_answerable": false,
+    "gold_answers": "",
+    "vanilla_first_response": "The middle of the 20th century.",
+    "final_user_visible_output": "The middle of the 20th century.",
+    "final_status": "accepted",
+    "terminal_reason": "passed_calibrated_quality_and_answerability_gates",
+    "action_sequence": "accept",
+    "vanilla_token_f1": null,
+    "controller_token_f1": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "The middle of the 20th century.",
+        "action": "accept",
+        "action_reason": "passed_calibrated_quality_and_answerability_gates",
+        "no_answer_probability": 0.4966065287590027,
+        "candidate_bad_probability": 0.6274886727333069,
+        "fused_hallucination_probability": 0.22690662429796823,
+        "support_score": 0.0423441156744957,
+        "relevance_score": 0.005040397011814188
+      }
+    ]
+  }
+]

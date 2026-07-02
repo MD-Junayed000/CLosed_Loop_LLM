@@ -1,0 +1,487 @@
+{
+  "run_name": "llama_ragtruth_controller_v5_squadv2_paper_ablation",
+  "config": {
+    "model_name": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "max_context_length": 2048,
+    "generation_max_new_tokens": 32,
+    "generation_do_sample": false,
+    "regeneration_max_new_tokens": 32,
+    "regeneration_do_sample": false,
+    "query_rewrite_max_new_tokens": 40,
+    "response_max_words": 20,
+    "probe_hidden_size": 256,
+    "feature_batch_size": 4,
+    "feature_cache_dtype": "float16",
+    "probe_batch_size": 256,
+    "probe_lr": 0.001,
+    "probe_weight_decay": 0.0001,
+    "probe_max_epochs": 25,
+    "probe_patience": 5,
+    "oof_folds": 3,
+    "label_smoothing": 0.05,
+    "probe_text_builder_version": "context_query_response_v2",
+    "fusion_grid_points": 101,
+    "abstain_precision_target": 0.9,
+    "embedding_model": "BAAI/bge-base-en-v1.5",
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "retrieval_query_instruction": "Represent this sentence for searching relevant passages: ",
+    "retrieval_k": 5,
+    "max_retrieval_k": 10,
+    "retrieval_candidate_pool": 30,
+    "reretrieval_candidate_pool": 60,
+    "retrieval_context_max_characters": 6000,
+    "retrieval_quality_top_n": 3,
+    "squad_v2_train_distractor_contexts": 25000,
+    "bm25_rrf_constant": 60,
+    "use_bm25_for_reretrieval": true,
+    "retrieval_calibration_queries": 1500,
+    "retrieval_oof_folds": 5,
+    "retrieval_failure_threshold": 0.4799999999999999,
+    "answerability_examples_per_class": 750,
+    "answerability_oof_folds": 5,
+    "answerable_coverage_target": 0.95,
+    "no_answer_threshold": 0.525,
+    "controller_dev_answerable_queries": 500,
+    "controller_dev_unanswerable_queries": 500,
+    "candidate_quality_oof_folds": 5,
+    "controller_bad_answer_f1_threshold": 0.5,
+    "controller_min_answerable_coverage": 0.7,
+    "controller_max_unanswerable_false_answer_rate": 0.15,
+    "candidate_bad_accept_threshold": 0.9299999999999999,
+    "candidate_bad_abstain_threshold": 0.9299999999999999,
+    "support_diagnostic_threshold": 0.1,
+    "relevance_diagnostic_threshold": 0.2,
+    "qa_model_name": "deepset/roberta-base-squad2",
+    "support_model_name": "cross-encoder/nli-deberta-v3-small",
+    "controller_aux_device": "cuda",
+    "qa_max_length": 384,
+    "qa_doc_stride": 128,
+    "qa_max_answer_length": 30,
+    "qa_top_documents": 2,
+    "support_top_documents": 3,
+    "controller_code_version": "controller_v5_squadv2_paper_llama3_ablation_v2",
+    "max_attempts": 3,
+    "max_regenerations": 1,
+    "max_reretrievals": 1,
+    "previous_v4_squad_v2_answerable": 300,
+    "previous_v4_squad_v2_unanswerable": 300,
+    "previous_v4_squad_v2_seed": 4042,
+    "previous_v5_squad_v2_answerable": 400,
+    "previous_v5_squad_v2_unanswerable": 400,
+    "previous_v5_squad_v2_seed": 6061,
+    "squad_v2_answerable_eval_queries": 500,
+    "squad_v2_unanswerable_eval_queries": 500,
+    "squad_v2_eval_seed": 7071,
+    "run_optional_halueval": true,
+    "halueval_eval_pairs": 10000,
+    "halueval_batch_size": 8,
+    "halueval_seed": 8081,
+    "bootstrap_samples": 1000,
+    "random_seed": 42,
+    "run_name": "llama_ragtruth_controller_v5_squadv2_paper_ablation",
+    "base_dir": "/content/drive/MyDrive/llama_colab_a100_ragtruth18k_test_run",
+    "hidden_size": 4096,
+    "intermediate_size": 14336,
+    "target_layer": 16,
+    "cev_temperature": 1.2812026509832484,
+    "iav_temperature": 1.1147060726164781,
+    "fusion_weight_cev": 0.51,
+    "platt_a": 5.5814642906188965,
+    "platt_b": -2.9830737113952637,
+    "hallucination_threshold": 0.3713131313131313,
+    "abstain_threshold": 0.7789277300309503
+  },
+  "detector_protocol": {
+    "training_source": "wandb/RAGTruth-processed:train",
+    "training_rows": 15090,
+    "test_source": "wandb/RAGTruth-processed:test",
+    "test_rows": 2700,
+    "test_metrics": {
+      "split": "wandb/RAGTruth-processed:test",
+      "n_examples": 2700,
+      "cev_auroc": 0.878691566109445,
+      "iav_auroc": 0.8804147144190998,
+      "fused_auroc": 0.8819193759728545,
+      "fused_auroc_ci_95_lower": 0.8687031062033678,
+      "fused_auroc_ci_95_upper": 0.8945744378582746,
+      "fused_auprc": 0.8122539810249472,
+      "accuracy": 0.784074074074074,
+      "balanced_accuracy": 0.7920866149098501,
+      "precision": 0.652027027027027,
+      "recall": 0.8186638388123012,
+      "f1": 0.7259050305594734,
+      "brier_score": 0.13280450376493957,
+      "ece_10_bins": 0.0643044410648737,
+      "decision_threshold_from_train_oof": 0.3713131313131313
+    },
+    "test_used_for_calibration": false
+  },
+  "controller_protocol": {
+    "dataset": "rajpurkar/squad_v2",
+    "squad_v1_used": false,
+    "training_partitions": {
+      "source": "rajpurkar/squad_v2:train",
+      "answerability_answerable": 750,
+      "answerability_unanswerable": 750,
+      "retrieval_calibration_answerable": 1500,
+      "controller_dev_answerable": 500,
+      "controller_dev_unanswerable": 500,
+      "all_partitions_pairwise_disjoint": true,
+      "partition_seed": 119
+    },
+    "retrieval_calibration": {
+      "source": "rajpurkar/squad_v2:train_answerable",
+      "n_examples": 1500,
+      "evaluation_split_used": false,
+      "initial_retrieval": "BGE dense plus cross-encoder reranking",
+      "corrective_retrieval": "dense plus BM25 RRF plus cross-encoder reranking",
+      "failure_prevalence": 0.076,
+      "oof_failure_auroc": 0.920356446672236,
+      "gold_answer_recall_at_k": 0.924,
+      "gold_context_hit_at_k": 0.9053333333333333,
+      "retrieval_failure_threshold": 0.4799999999999999,
+      "threshold_selection": {
+        "threshold": 0.4799999999999999,
+        "balanced_accuracy": 0.8608452950558214,
+        "failure_f1": 0.43923240938166314,
+        "failure_recall": 0.9035087719298246
+      },
+      "disjoint_from_controller_dev": true
+    },
+    "answerability_calibration": {
+      "source": "rajpurkar/squad_v2:train",
+      "n_examples": 1500,
+      "balanced_classes": true,
+      "validation_split_used": false,
+      "qa_model": "deepset/roberta-base-squad2",
+      "oof_auroc": 0.984288,
+      "no_answer_threshold": 0.525,
+      "selected_operating_point": {
+        "threshold": 0.525,
+        "answerable_coverage": 0.9506666666666667,
+        "unanswerable_abstention_accuracy": 0.9346666666666666,
+        "balanced_accuracy": 0.9426666666666667
+      },
+      "selection_rule": "maximize unanswerable abstention subject to answerable coverage >= 0.95"
+    },
+    "candidate_quality_calibration": {
+      "source": "rajpurkar/squad_v2:train_mixed",
+      "n_examples": 1000,
+      "answerable_rows": 500,
+      "unanswerable_rows": 500,
+      "validation_split_used": false,
+      "bad_label_definition": "answerable: incorrect/refusal/invalid; unanswerable: any non-refusal or invalid output",
+      "oof_bad_auroc": 0.9481752766788746,
+      "selected_gate": {
+        "candidate_bad_threshold": 0.9299999999999999,
+        "answerable_coverage": 0.946,
+        "unanswerable_false_answer_rate": 0.038,
+        "answerability_accuracy": 0.954,
+        "answerable_overall_f1": 0.7972570435572517,
+        "accepted_answerable_f1": 0.8427664308216193,
+        "selective_error": 0.12473572938689217
+      },
+      "constraints": {
+        "minimum_answerable_coverage": 0.7,
+        "maximum_unanswerable_false_answer_rate": 0.15,
+        "satisfied": true
+      },
+      "candidate_bad_accept_threshold": 0.9299999999999999,
+      "candidate_bad_abstain_threshold": 0.9299999999999999,
+      "support_and_relevance_usage": "raw support and relevance scores used as features and diagnostic routing signals; not calibrated probabilities or independent hard acceptance gates",
+      "abstention_selection": {
+        "threshold": 0.9299999999999999,
+        "precision": 0.9857142857142858,
+        "recall": 0.6070381231671554,
+        "support": 210.0
+      },
+      "abstention_selection_rule": "precision >= 0.85, then maximize recall",
+      "disjoint_from_retrieval_calibration": true,
+      "disjoint_from_answerability_calibration": true,
+      "disjoint_from_final_validation": true
+    },
+    "signal_ablation": {
+      "protocol": "paired signal ablation on identical frozen first-pass responses",
+      "external_only_feature_names": [
+        "retrieval_failure_probability",
+        "no_answer_probability",
+        "support_score",
+        "support_margin",
+        "relevance_score",
+        "span_alignment_f1",
+        "qa_margin",
+        "is_refusal",
+        "is_invalid",
+        "word_count_scaled"
+      ],
+      "external_only_oof_bad_auroc": 0.9480595766268095,
+      "external_only_threshold": 0.9392952535301446,
+      "external_only_constraints_satisfied": true,
+      "full_signal_threshold": 0.9299999999999999,
+      "development_results": [
+        {
+          "policy": "Vanilla first pass",
+          "oof_candidate_bad_auroc": null,
+          "decision_threshold": null,
+          "answerability_accuracy": 0.734,
+          "answerable_coverage": 0.972,
+          "false_abstention_rate": 0.028000000000000025,
+          "unanswerable_abstention_accuracy": 0.496,
+          "false_answer_rate": 0.504,
+          "answerable_overall_f1": 0.8085713292715375,
+          "delivered_answerable_f1": 0.8318635074810057
+        },
+        {
+          "policy": "Answerability gate only",
+          "oof_candidate_bad_auroc": null,
+          "decision_threshold": 0.525,
+          "answerability_accuracy": 0.951,
+          "answerable_coverage": 0.946,
+          "false_abstention_rate": 0.05400000000000005,
+          "unanswerable_abstention_accuracy": 0.956,
+          "false_answer_rate": 0.044,
+          "answerable_overall_f1": 0.7972570435572517,
+          "delivered_answerable_f1": 0.8427664308216193
+        },
+        {
+          "policy": "External verification without CEV/IAV",
+          "oof_candidate_bad_auroc": 0.9480595766268095,
+          "decision_threshold": 0.9392952535301446,
+          "answerability_accuracy": 0.953,
+          "answerable_coverage": 0.946,
+          "false_abstention_rate": 0.05400000000000005,
+          "unanswerable_abstention_accuracy": 0.96,
+          "false_answer_rate": 0.04,
+          "answerable_overall_f1": 0.7972570435572517,
+          "delivered_answerable_f1": 0.8427664308216193
+        },
+        {
+          "policy": "Full first-pass signals with CEV/IAV",
+          "oof_candidate_bad_auroc": 0.9481752766788746,
+          "decision_threshold": 0.9299999999999999,
+          "answerability_accuracy": 0.954,
+          "answerable_coverage": 0.946,
+          "false_abstention_rate": 0.05400000000000005,
+          "unanswerable_abstention_accuracy": 0.962,
+          "false_answer_rate": 0.038,
+          "answerable_overall_f1": 0.7972570435572517,
+          "delivered_answerable_f1": 0.8427664308216193
+        }
+      ],
+      "final_results": [
+        {
+          "policy": "Vanilla LLaMA",
+          "stage": "first_pass",
+          "answerability_accuracy": 0.72,
+          "answerable_coverage": 0.96,
+          "false_abstention_rate": 0.040000000000000036,
+          "unanswerable_abstention_accuracy": 0.48,
+          "false_answer_rate": 0.52,
+          "answerable_overall_f1": 0.8505549699367184,
+          "delivered_answerable_f1": 0.8859947603507483
+        },
+        {
+          "policy": "Answerability gate only",
+          "stage": "first_pass",
+          "answerability_accuracy": 0.868,
+          "answerable_coverage": 0.868,
+          "false_abstention_rate": 0.132,
+          "unanswerable_abstention_accuracy": 0.868,
+          "false_answer_rate": 0.132,
+          "answerable_overall_f1": 0.7745626318088964,
+          "delivered_answerable_f1": 0.8923532624526457
+        },
+        {
+          "policy": "External verification without CEV/IAV",
+          "stage": "first_pass",
+          "answerability_accuracy": 0.865,
+          "answerable_coverage": 0.86,
+          "false_abstention_rate": 0.14,
+          "unanswerable_abstention_accuracy": 0.87,
+          "false_answer_rate": 0.13,
+          "answerable_overall_f1": 0.7722549395012042,
+          "delivered_answerable_f1": 0.8979708598851212
+        },
+        {
+          "policy": "Full signals with CEV/IAV",
+          "stage": "first_pass",
+          "answerability_accuracy": 0.866,
+          "answerable_coverage": 0.86,
+          "false_abstention_rate": 0.14,
+          "unanswerable_abstention_accuracy": 0.872,
+          "false_answer_rate": 0.128,
+          "answerable_overall_f1": 0.7722549395012042,
+          "delivered_answerable_f1": 0.8979708598851212
+        },
+        {
+          "policy": "Full multi-action Controller-v5",
+          "stage": "multi_action",
+          "answerability_accuracy": 0.861,
+          "answerable_coverage": 0.878,
+          "false_abstention_rate": 0.122,
+          "unanswerable_abstention_accuracy": 0.844,
+          "false_answer_rate": 0.156,
+          "answerable_overall_f1": 0.7839447790733967,
+          "delivered_answerable_f1": 0.89287560258929
+        }
+      ],
+      "cev_iav_marginal_effect_bootstrap": {
+        "answerability_accuracy_change": {
+          "mean_difference": 0.001,
+          "ci_lower": 0.0,
+          "ci_upper": 0.003
+        },
+        "false_answer_rate_change": {
+          "mean_difference": -0.002,
+          "ci_lower": -0.006,
+          "ci_upper": 0.0
+        },
+        "answerable_coverage_change": {
+          "mean_difference": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0
+        },
+        "answerable_overall_f1_change": {
+          "mean_difference": 0.0,
+          "ci_lower": 0.0,
+          "ci_upper": 0.0
+        }
+      },
+      "interpretation_note": "Rows 3 and 4 use the same generated answer; their difference isolates the decision contribution of the fused CEV/IAV feature. The final row additionally includes diagnostic regeneration."
+    },
+    "final_evaluation_spec": {
+      "controller_code_version": "controller_v5_squadv2_paper_llama3_ablation_v2",
+      "dataset": "rajpurkar/squad_v2:validation",
+      "dataset_fingerprint": "461c0301636b3e0b",
+      "context_mode": "assigned_paragraph_fixed",
+      "answerable_rows": 500,
+      "unanswerable_rows": 500,
+      "excluded_previous_v4": {
+        "answerable": 300,
+        "unanswerable": 300
+      },
+      "excluded_previous_v5": {
+        "answerable": 400,
+        "unanswerable": 400
+      },
+      "selection_seed": 7071,
+      "probe_weights_sha256": "979cc1c8b3612a69cfa2d843d4ac7ff897a984d0aae1fb68707b436a617c7d0c",
+      "answerability_model_sha256": "2770482cbb3bc5896d7ac44006695f25651ab1d9f2da3904850ea8cf25831fd6",
+      "candidate_quality_model_sha256": "5cfcc142953023116f8e7efc5a32ffbc81efa0dc5e44b0aa307eea3973c9ef4b",
+      "thresholds": {
+        "retrieval_failure": 0.4799999999999999,
+        "no_answer": 0.525,
+        "candidate_accept": 0.9299999999999999,
+        "candidate_abstain": 0.9299999999999999
+      },
+      "action_budget": {
+        "max_attempts": 3,
+        "max_regenerations": 1,
+        "max_reretrievals": 0
+      }
+    },
+    "final_summary": {
+      "n_total": 1000,
+      "n_answerable": 500,
+      "n_unanswerable": 500,
+      "vanilla_answerability_accuracy": 0.72,
+      "controller_answerability_accuracy": 0.861,
+      "vanilla_answerable_coverage": 0.96,
+      "controller_answerable_coverage": 0.878,
+      "vanilla_false_abstention_rate": 0.040000000000000036,
+      "controller_false_abstention_rate": 0.122,
+      "vanilla_unanswerable_abstention_accuracy": 0.48,
+      "controller_unanswerable_abstention_accuracy": 0.844,
+      "vanilla_false_answer_rate": 0.52,
+      "controller_false_answer_rate": 0.156,
+      "vanilla_answerable_exact_match_overall": 0.748,
+      "controller_answerable_exact_match_overall": 0.696,
+      "vanilla_answerable_token_f1_overall": 0.8647610710164568,
+      "controller_answerable_token_f1_overall": 0.7839447790733967,
+      "controller_answerable_token_f1_among_delivered": 0.89287560258929,
+      "vanilla_mean_latency_sec": 0.30969696942599795,
+      "controller_mean_latency_sec": 0.339389398861,
+      "vanilla_p95_latency_sec": 0.6735263497001931,
+      "controller_p95_latency_sec": 0.7100388860000514,
+      "action_counts_across_attempts": {
+        "accept": 517,
+        "abstain": 483,
+        "regenerate": 52
+      },
+      "terminal_reason_counts": {
+        "passed_calibrated_quality_and_answerability_gates": 517,
+        "evidence_predicted_unanswerable": 245,
+        "answerability_supported_abstention": 215,
+        "answerable_refusal_no_budget": 12,
+        "repeated_candidate_no_new_information": 4,
+        "invalid_output_no_repair_budget": 6,
+        "persistent_high_composite_risk": 1
+      },
+      "paired_bootstrap_answerability_accuracy_change": {
+        "mean_difference": 0.141,
+        "ci_lower": 0.108975,
+        "ci_upper": 0.173
+      },
+      "paired_bootstrap_false_answer_rate_change": {
+        "mean_difference": -0.364,
+        "ci_lower": -0.412,
+        "ci_upper": -0.32
+      },
+      "paired_bootstrap_answerable_f1_change": {
+        "mean_difference": -0.08081629194306025,
+        "ci_lower": -0.10560396453811915,
+        "ci_upper": -0.057677054561722174
+      },
+      "paired_bootstrap_answerable_coverage_change": {
+        "mean_difference": -0.082,
+        "ci_lower": -0.112,
+        "ci_upper": -0.054
+      }
+    },
+    "demonstration_categories": [
+      {
+        "Category": "Correct answer accepted",
+        "Observed": true
+      },
+      {
+        "Category": "Safe abstention on an unanswerable question",
+        "Observed": true
+      },
+      {
+        "Category": "Successful diagnostic regeneration",
+        "Observed": true
+      },
+      {
+        "Category": "Protective abstention after an unsafe first answer",
+        "Observed": true
+      },
+      {
+        "Category": "False abstention on an answerable question",
+        "Observed": true
+      },
+      {
+        "Category": "Accepted unsupported answer",
+        "Observed": true
+      }
+    ]
+  },
+  "optional_halueval": {
+    "enabled": true,
+    "results": {
+      "dataset": "pminervini/HaluEval:qa",
+      "split": "data",
+      "n_pairs": 10000,
+      "n_scored_answers": 20000,
+      "cev_auroc_raw": 0.851765045,
+      "iav_auroc_raw": 0.7398781650000001,
+      "fused_auroc_raw": 0.80939538,
+      "fused_auroc_ci_95_lower": 0.8029321869934132,
+      "fused_auroc_ci_95_upper": 0.815898018745848,
+      "training_or_calibration_use": false,
+      "score_orientation": "higher score means greater hallucination risk; no HaluEval-dependent polarity flipping"
+    },
+    "used_for_training_or_calibration": false
+  },
+  "probe_weights_sha256": "979cc1c8b3612a69cfa2d843d4ac7ff897a984d0aae1fb68707b436a617c7d0c",
+  "controller_fingerprint": "138ad79ec468cd71"
+}

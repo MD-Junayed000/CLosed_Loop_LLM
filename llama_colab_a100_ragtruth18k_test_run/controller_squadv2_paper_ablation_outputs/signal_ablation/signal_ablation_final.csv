@@ -1,0 +1,6 @@
+policy,stage,answerability_accuracy,answerable_coverage,false_abstention_rate,unanswerable_abstention_accuracy,false_answer_rate,answerable_overall_f1,delivered_answerable_f1
+Vanilla LLaMA,first_pass,0.72,0.96,0.040000000000000036,0.48,0.52,0.8505549699367184,0.8859947603507483
+Answerability gate only,first_pass,0.868,0.868,0.132,0.868,0.132,0.7745626318088964,0.8923532624526457
+External verification without CEV/IAV,first_pass,0.865,0.86,0.14,0.87,0.13,0.7722549395012042,0.8979708598851212
+Full signals with CEV/IAV,first_pass,0.866,0.86,0.14,0.872,0.128,0.7722549395012042,0.8979708598851212
+Full multi-action Controller-v5,multi_action,0.861,0.878,0.122,0.844,0.156,0.7839447790733967,0.89287560258929

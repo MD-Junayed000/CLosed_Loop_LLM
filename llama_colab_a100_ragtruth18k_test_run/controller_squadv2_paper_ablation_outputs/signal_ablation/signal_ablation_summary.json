@@ -1,0 +1,149 @@
+{
+  "protocol": "paired signal ablation on identical frozen first-pass responses",
+  "external_only_feature_names": [
+    "retrieval_failure_probability",
+    "no_answer_probability",
+    "support_score",
+    "support_margin",
+    "relevance_score",
+    "span_alignment_f1",
+    "qa_margin",
+    "is_refusal",
+    "is_invalid",
+    "word_count_scaled"
+  ],
+  "external_only_oof_bad_auroc": 0.9480595766268095,
+  "external_only_threshold": 0.9392952535301446,
+  "external_only_constraints_satisfied": true,
+  "full_signal_threshold": 0.9299999999999999,
+  "development_results": [
+    {
+      "policy": "Vanilla first pass",
+      "oof_candidate_bad_auroc": null,
+      "decision_threshold": null,
+      "answerability_accuracy": 0.734,
+      "answerable_coverage": 0.972,
+      "false_abstention_rate": 0.028000000000000025,
+      "unanswerable_abstention_accuracy": 0.496,
+      "false_answer_rate": 0.504,
+      "answerable_overall_f1": 0.8085713292715375,
+      "delivered_answerable_f1": 0.8318635074810057
+    },
+    {
+      "policy": "Answerability gate only",
+      "oof_candidate_bad_auroc": null,
+      "decision_threshold": 0.525,
+      "answerability_accuracy": 0.951,
+      "answerable_coverage": 0.946,
+      "false_abstention_rate": 0.05400000000000005,
+      "unanswerable_abstention_accuracy": 0.956,
+      "false_answer_rate": 0.044,
+      "answerable_overall_f1": 0.7972570435572517,
+      "delivered_answerable_f1": 0.8427664308216193
+    },
+    {
+      "policy": "External verification without CEV/IAV",
+      "oof_candidate_bad_auroc": 0.9480595766268095,
+      "decision_threshold": 0.9392952535301446,
+      "answerability_accuracy": 0.953,
+      "answerable_coverage": 0.946,
+      "false_abstention_rate": 0.05400000000000005,
+      "unanswerable_abstention_accuracy": 0.96,
+      "false_answer_rate": 0.04,
+      "answerable_overall_f1": 0.7972570435572517,
+      "delivered_answerable_f1": 0.8427664308216193
+    },
+    {
+      "policy": "Full first-pass signals with CEV/IAV",
+      "oof_candidate_bad_auroc": 0.9481752766788746,
+      "decision_threshold": 0.9299999999999999,
+      "answerability_accuracy": 0.954,
+      "answerable_coverage": 0.946,
+      "false_abstention_rate": 0.05400000000000005,
+      "unanswerable_abstention_accuracy": 0.962,
+      "false_answer_rate": 0.038,
+      "answerable_overall_f1": 0.7972570435572517,
+      "delivered_answerable_f1": 0.8427664308216193
+    }
+  ],
+  "final_results": [
+    {
+      "policy": "Vanilla LLaMA",
+      "stage": "first_pass",
+      "answerability_accuracy": 0.72,
+      "answerable_coverage": 0.96,
+      "false_abstention_rate": 0.040000000000000036,
+      "unanswerable_abstention_accuracy": 0.48,
+      "false_answer_rate": 0.52,
+      "answerable_overall_f1": 0.8505549699367184,
+      "delivered_answerable_f1": 0.8859947603507483
+    },
+    {
+      "policy": "Answerability gate only",
+      "stage": "first_pass",
+      "answerability_accuracy": 0.868,
+      "answerable_coverage": 0.868,
+      "false_abstention_rate": 0.132,
+      "unanswerable_abstention_accuracy": 0.868,
+      "false_answer_rate": 0.132,
+      "answerable_overall_f1": 0.7745626318088964,
+      "delivered_answerable_f1": 0.8923532624526457
+    },
+    {
+      "policy": "External verification without CEV/IAV",
+      "stage": "first_pass",
+      "answerability_accuracy": 0.865,
+      "answerable_coverage": 0.86,
+      "false_abstention_rate": 0.14,
+      "unanswerable_abstention_accuracy": 0.87,
+      "false_answer_rate": 0.13,
+      "answerable_overall_f1": 0.7722549395012042,
+      "delivered_answerable_f1": 0.8979708598851212
+    },
+    {
+      "policy": "Full signals with CEV/IAV",
+      "stage": "first_pass",
+      "answerability_accuracy": 0.866,
+      "answerable_coverage": 0.86,
+      "false_abstention_rate": 0.14,
+      "unanswerable_abstention_accuracy": 0.872,
+      "false_answer_rate": 0.128,
+      "answerable_overall_f1": 0.7722549395012042,
+      "delivered_answerable_f1": 0.8979708598851212
+    },
+    {
+      "policy": "Full multi-action Controller-v5",
+      "stage": "multi_action",
+      "answerability_accuracy": 0.861,
+      "answerable_coverage": 0.878,
+      "false_abstention_rate": 0.122,
+      "unanswerable_abstention_accuracy": 0.844,
+      "false_answer_rate": 0.156,
+      "answerable_overall_f1": 0.7839447790733967,
+      "delivered_answerable_f1": 0.89287560258929
+    }
+  ],
+  "cev_iav_marginal_effect_bootstrap": {
+    "answerability_accuracy_change": {
+      "mean_difference": 0.001,
+      "ci_lower": 0.0,
+      "ci_upper": 0.003
+    },
+    "false_answer_rate_change": {
+      "mean_difference": -0.002,
+      "ci_lower": -0.006,
+      "ci_upper": 0.0
+    },
+    "answerable_coverage_change": {
+      "mean_difference": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0
+    },
+    "answerable_overall_f1_change": {
+      "mean_difference": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0
+    }
+  },
+  "interpretation_note": "Rows 3 and 4 use the same generated answer; their difference isolates the decision contribution of the fused CEV/IAV feature. The final row additionally includes diagnostic regeneration."
+}
