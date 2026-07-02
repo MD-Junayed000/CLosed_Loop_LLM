@@ -1,0 +1,8 @@
+Best outcome,Backbone,Comparison criterion,Interpretation
+Strongest official RAGTruth detector,Qwen3-8B,0.8888,Highest official-test fused AUROC
+Strongest HaluEval cross-domain transfer,LLaMA-3-8B-Instruct,0.8094,Highest raw cross-domain fused AUROC
+Highest final answerability accuracy,LLaMA-3-8B-Instruct,86.1%,Most accurate answer-versus-abstain decisions
+Lowest final false-answer rate,Mistral-7B-Instruct-v0.2,14.0%,Strongest suppression of unsupported answers
+Highest final answerable coverage,Qwen3-8B,89.0%,Largest fraction of answerable questions served
+Highest delivered-answer F1,Qwen3-8B,0.9012,Best quality among responses delivered to users
+Lowest mean controller overhead,Qwen3-8B,6.0%,Most efficient closed-loop deployment

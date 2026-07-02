@@ -1,0 +1,176 @@
+{
+  "status": "passed",
+  "drive_root": "/content/drive/MyDrive",
+  "comparison_output_directory": "/content/drive/MyDrive/compare_models_controller_v5_current",
+  "models": [
+    "Qwen3-8B",
+    "LLaMA-3-8B-Instruct",
+    "Mistral-7B-Instruct-v0.2"
+  ],
+  "tables": [
+    "artifact_validation.csv",
+    "official_ragtruth_detector_comparison.csv",
+    "final_controller_safety_utility_comparison.csv",
+    "latency_and_controller_action_comparison.csv",
+    "cross_model_best_outcomes.csv",
+    "varied_controller_demonstrations_paper_ready.csv"
+  ],
+  "figures": [
+    "published_baselines_vs_proposed_fused_probe.png",
+    "ragtruth_vs_halueval_fused_auroc.png",
+    "controller_v5_safety_quality_coverage_dotplot.png",
+    "probe_training_curves_three_backbones.png",
+    "halueval_roc_grid.png",
+    "vanilla_rag_vs_closed_loop_rag.png",
+    "cev_iav_fused_probe_comparison.png"
+  ],
+  "figure_metadata": {
+    "published_baselines_vs_proposed_fused_probe.png": {
+      "width_px": 4763,
+      "height_px": 2120,
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "ragtruth_vs_halueval_fused_auroc.png": {
+      "width_px": 3711,
+      "height_px": 1907,
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "controller_v5_safety_quality_coverage_dotplot.png": {
+      "width_px": 4612,
+      "height_px": 1661,
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "probe_training_curves_three_backbones.png": {
+      "width_px": 5660,
+      "height_px": 1722,
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "halueval_roc_grid.png": {
+      "width_px": 5661,
+      "height_px": 1830,
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "vanilla_rag_vs_closed_loop_rag.png": {
+      "width_px": 4760,
+      "height_px": 1935,
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "cev_iav_fused_probe_comparison.png": {
+      "width_px": 3861,
+      "height_px": 1997,
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    }
+  },
+  "checks": {
+    "three_backbones_loaded": true,
+    "official_ragtruth_protocol": true,
+    "fresh_squadv2_evaluation": true,
+    "halueval_full_evaluation": true,
+    "mistral_no_polarity_inversion": true,
+    "Qwen3-8B ragtruth_fused_auroc": true,
+    "Qwen3-8B halueval_fused_auroc": true,
+    "Qwen3-8B controller_answerability_accuracy": true,
+    "Qwen3-8B controller_false_answer_rate": true,
+    "LLaMA-3-8B-Instruct ragtruth_fused_auroc": true,
+    "LLaMA-3-8B-Instruct halueval_fused_auroc": true,
+    "LLaMA-3-8B-Instruct controller_answerability_accuracy": true,
+    "LLaMA-3-8B-Instruct controller_false_answer_rate": true,
+    "Mistral-7B-Instruct-v0.2 ragtruth_fused_auroc": true,
+    "Mistral-7B-Instruct-v0.2 halueval_fused_auroc": true,
+    "Mistral-7B-Instruct-v0.2 controller_answerability_accuracy": true,
+    "Mistral-7B-Instruct-v0.2 controller_false_answer_rate": true,
+    "table_exists::artifact_validation.csv": true,
+    "table_exists::official_ragtruth_detector_comparison.csv": true,
+    "table_exists::final_controller_safety_utility_comparison.csv": true,
+    "table_exists::latency_and_controller_action_comparison.csv": true,
+    "table_exists::cross_model_best_outcomes.csv": true,
+    "table_exists::varied_controller_demonstrations_paper_ready.csv": true,
+    "figure_exists::published_baselines_vs_proposed_fused_probe.png": true,
+    "figure_resolution::published_baselines_vs_proposed_fused_probe.png": true,
+    "figure_dpi::published_baselines_vs_proposed_fused_probe.png": true,
+    "figure_exists::ragtruth_vs_halueval_fused_auroc.png": true,
+    "figure_resolution::ragtruth_vs_halueval_fused_auroc.png": true,
+    "figure_dpi::ragtruth_vs_halueval_fused_auroc.png": true,
+    "figure_exists::controller_v5_safety_quality_coverage_dotplot.png": true,
+    "figure_resolution::controller_v5_safety_quality_coverage_dotplot.png": true,
+    "figure_dpi::controller_v5_safety_quality_coverage_dotplot.png": true,
+    "figure_exists::probe_training_curves_three_backbones.png": true,
+    "figure_resolution::probe_training_curves_three_backbones.png": true,
+    "figure_dpi::probe_training_curves_three_backbones.png": true,
+    "figure_exists::halueval_roc_grid.png": true,
+    "figure_resolution::halueval_roc_grid.png": true,
+    "figure_dpi::halueval_roc_grid.png": true,
+    "figure_exists::vanilla_rag_vs_closed_loop_rag.png": true,
+    "figure_resolution::vanilla_rag_vs_closed_loop_rag.png": true,
+    "figure_dpi::vanilla_rag_vs_closed_loop_rag.png": true,
+    "figure_exists::cev_iav_fused_probe_comparison.png": true,
+    "figure_resolution::cev_iav_fused_probe_comparison.png": true,
+    "figure_dpi::cev_iav_fused_probe_comparison.png": true
+  },
+  "failed_checks": [],
+  "current_best_outcomes": [
+    {
+      "Best outcome": "Strongest official RAGTruth detector",
+      "Backbone": "Qwen3-8B",
+      "Comparison criterion": "0.8888",
+      "Interpretation": "Highest official-test fused AUROC"
+    },
+    {
+      "Best outcome": "Strongest HaluEval cross-domain transfer",
+      "Backbone": "LLaMA-3-8B-Instruct",
+      "Comparison criterion": "0.8094",
+      "Interpretation": "Highest raw cross-domain fused AUROC"
+    },
+    {
+      "Best outcome": "Highest final answerability accuracy",
+      "Backbone": "LLaMA-3-8B-Instruct",
+      "Comparison criterion": "86.1%",
+      "Interpretation": "Most accurate answer-versus-abstain decisions"
+    },
+    {
+      "Best outcome": "Lowest final false-answer rate",
+      "Backbone": "Mistral-7B-Instruct-v0.2",
+      "Comparison criterion": "14.0%",
+      "Interpretation": "Strongest suppression of unsupported answers"
+    },
+    {
+      "Best outcome": "Highest final answerable coverage",
+      "Backbone": "Qwen3-8B",
+      "Comparison criterion": "89.0%",
+      "Interpretation": "Largest fraction of answerable questions served"
+    },
+    {
+      "Best outcome": "Highest delivered-answer F1",
+      "Backbone": "Qwen3-8B",
+      "Comparison criterion": "0.9012",
+      "Interpretation": "Best quality among responses delivered to users"
+    },
+    {
+      "Best outcome": "Lowest mean controller overhead",
+      "Backbone": "Qwen3-8B",
+      "Comparison criterion": "6.0%",
+      "Interpretation": "Most efficient closed-loop deployment"
+    }
+  ]
+}

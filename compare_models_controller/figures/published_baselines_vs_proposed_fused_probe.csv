@@ -1,0 +1,12 @@
+Method,mistral-7b,llama-3-8b-instruct,qwen3-8b
+SelfCheckGPT,0.568,0.534,
+EigenScore,0.564,0.6,
+RefChecker,0.602,0.572,
+P(True),0.753,0.541,
+Focus,0.78,0.526,
+Perplexity,0.62,0.713,
+LN-Entropy,0.761,0.707,
+ReDeEP,0.762,0.75,
+Lumina,0.769,0.745,
+SAPLMA,0.807,0.76,
+Ours (Fused Probe),0.8719842641251385,0.8819193759728545,0.8887968803471162
