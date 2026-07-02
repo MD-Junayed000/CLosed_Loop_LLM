@@ -1,0 +1,36 @@
+{
+  "source": "rajpurkar/squad_v2:train_mixed",
+  "n_examples": 1000,
+  "answerable_rows": 500,
+  "unanswerable_rows": 500,
+  "validation_split_used": false,
+  "bad_label_definition": "answerable: incorrect/refusal/invalid; unanswerable: any non-refusal or invalid output",
+  "oof_bad_auroc": 0.9530582232405467,
+  "selected_gate": {
+    "candidate_bad_threshold": 0.95,
+    "answerable_coverage": 0.89,
+    "unanswerable_false_answer_rate": 0.036,
+    "answerability_accuracy": 0.927,
+    "answerable_overall_f1": 0.5424394947359041,
+    "accepted_answerable_f1": 0.6094825783549486,
+    "selective_error": 0.4134831460674157
+  },
+  "constraints": {
+    "minimum_answerable_coverage": 0.7,
+    "maximum_unanswerable_false_answer_rate": 0.15,
+    "satisfied": true
+  },
+  "candidate_bad_accept_threshold": 0.95,
+  "candidate_bad_abstain_threshold": 0.95,
+  "support_and_relevance_usage": "raw support and relevance scores used as features and diagnostic routing signals; not calibrated probabilities or independent hard acceptance gates",
+  "abstention_selection": {
+    "threshold": 0.95,
+    "precision": 0.996415770609319,
+    "recall": 0.49466192170818507,
+    "support": 279.0
+  },
+  "abstention_selection_rule": "precision >= 0.85, then maximize recall",
+  "disjoint_from_retrieval_calibration": true,
+  "disjoint_from_answerability_calibration": true,
+  "disjoint_from_final_validation": true
+}

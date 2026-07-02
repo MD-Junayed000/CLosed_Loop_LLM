@@ -1,0 +1,58 @@
+{
+  "n_total": 1000,
+  "n_answerable": 500,
+  "n_unanswerable": 500,
+  "vanilla_answerability_accuracy": 0.7,
+  "controller_answerability_accuracy": 0.859,
+  "vanilla_answerable_coverage": 0.916,
+  "controller_answerable_coverage": 0.858,
+  "vanilla_false_abstention_rate": 0.08399999999999996,
+  "controller_false_abstention_rate": 0.14200000000000002,
+  "vanilla_unanswerable_abstention_accuracy": 0.484,
+  "controller_unanswerable_abstention_accuracy": 0.86,
+  "vanilla_false_answer_rate": 0.516,
+  "controller_false_answer_rate": 0.14,
+  "vanilla_answerable_exact_match_overall": 0.32,
+  "controller_answerable_exact_match_overall": 0.308,
+  "vanilla_answerable_token_f1_overall": 0.601565868821805,
+  "controller_answerable_token_f1_overall": 0.5565573061254714,
+  "controller_answerable_token_f1_among_delivered": 0.648668188957426,
+  "vanilla_mean_latency_sec": 0.7466923480679934,
+  "controller_mean_latency_sec": 0.9295719839139988,
+  "vanilla_p95_latency_sec": 1.2378776250994405,
+  "controller_p95_latency_sec": 2.441814864199773,
+  "action_counts_across_attempts": {
+    "accept": 499,
+    "abstain": 501,
+    "regenerate": 173
+  },
+  "terminal_reason_counts": {
+    "passed_calibrated_quality_and_answerability_gates": 499,
+    "answerability_supported_abstention": 128,
+    "evidence_predicted_unanswerable": 271,
+    "invalid_output_no_repair_budget": 90,
+    "persistent_high_composite_risk": 3,
+    "answerable_refusal_no_budget": 8,
+    "repeated_candidate_no_new_information": 1
+  },
+  "paired_bootstrap_answerability_accuracy_change": {
+    "mean_difference": 0.159,
+    "ci_lower": 0.126,
+    "ci_upper": 0.18802499999999997
+  },
+  "paired_bootstrap_false_answer_rate_change": {
+    "mean_difference": -0.376,
+    "ci_lower": -0.41805,
+    "ci_upper": -0.332
+  },
+  "paired_bootstrap_answerable_f1_change": {
+    "mean_difference": -0.0450085626963335,
+    "ci_lower": -0.06432927502924797,
+    "ci_upper": -0.027132484652881216
+  },
+  "paired_bootstrap_answerable_coverage_change": {
+    "mean_difference": -0.058,
+    "ci_lower": -0.092,
+    "ci_upper": -0.028
+  }
+}

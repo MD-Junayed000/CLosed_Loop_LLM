@@ -1,0 +1,7 @@
+Category,Observed,Question,Final user-visible output,Action sequence
+Correct answer accepted,True,To where did Ethelred flee?,Normandy,accept
+Safe abstention on an unanswerable question,True,How is time not required to solve a problem calculated?,[ABSTAIN],regenerate -> abstain
+Successful diagnostic regeneration,True,What did al-Gama'a al-Islamiyya use to get its way?,Violence.,regenerate -> accept
+Protective abstention after an unsafe first answer,True,What wasn't Marin's orders?,[ABSTAIN],abstain
+False abstention on an answerable question,True,"The innate immune system responds in a generic way, meaning it is what?",[ABSTAIN],abstain
+Accepted unsupported answer,True, When did the age of Imperialism end?,Middle of the 20th century.,regenerate -> accept

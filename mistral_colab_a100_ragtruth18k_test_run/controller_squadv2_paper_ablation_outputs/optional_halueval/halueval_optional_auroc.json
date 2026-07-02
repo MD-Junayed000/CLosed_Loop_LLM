@@ -1,0 +1,23 @@
+{
+  "dataset": "pminervini/HaluEval:qa",
+  "split": "data",
+  "n_pairs": 10000,
+  "n_scored_answers": 20000,
+  "cev_auroc_raw": 0.7630311700000001,
+  "cev_polarity_inverted": false,
+  "cev_auroc_flipped_diagnostic": null,
+  "iav_auroc_raw": 0.62029814,
+  "iav_polarity_inverted": false,
+  "iav_auroc_flipped_diagnostic": null,
+  "fused_auroc_raw": 0.7205353999999999,
+  "fused_polarity_inverted": false,
+  "fused_auroc_flipped_diagnostic": null,
+  "fused_auroc_raw_ci_95_lower": 0.7130964840475736,
+  "fused_auroc_raw_ci_95_upper": 0.7274345677053305,
+  "fused_auroc_flipped_ci_95_lower": null,
+  "fused_auroc_flipped_ci_95_upper": null,
+  "training_or_calibration_use": false,
+  "primary_cross_domain_metric": "raw AUROC",
+  "diagnostic_flip_rule": "For each signal independently, plot and report 1-score only when its raw HaluEval AUROC is below 0.5.",
+  "diagnostic_flip_warning": "The flipped AUROC is HaluEval-label-dependent orientation analysis only; it is not a deployed score, not used for training, and not used for controller calibration."
+}

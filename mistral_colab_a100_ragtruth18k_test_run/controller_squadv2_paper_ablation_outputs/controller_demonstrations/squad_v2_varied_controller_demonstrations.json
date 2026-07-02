@@ -1,0 +1,209 @@
+[
+  {
+    "category": "Correct answer accepted",
+    "description": "An answerable question for which the controller delivered a high-quality answer.",
+    "observed": true,
+    "squad_id": "56de15dbcffd8e1900b4b5ca",
+    "question": "To where did Ethelred flee?",
+    "is_answerable": true,
+    "gold_answers": "Normandy | Normandy | Normandy",
+    "vanilla_first_response": "Normandy",
+    "final_user_visible_output": "Normandy",
+    "final_status": "accepted",
+    "terminal_reason": "passed_calibrated_quality_and_answerability_gates",
+    "action_sequence": "accept",
+    "vanilla_token_f1": 1.0,
+    "controller_token_f1": 1.0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "Normandy",
+        "action": "accept",
+        "action_reason": "passed_calibrated_quality_and_answerability_gates",
+        "no_answer_probability": 0.02703281305730343,
+        "candidate_bad_probability": 0.07043011486530304,
+        "fused_hallucination_probability": 0.7013480342111047,
+        "support_score": 0.00106445187702775,
+        "relevance_score": 3.957924856118651e-05
+      }
+    ]
+  },
+  {
+    "category": "Safe abstention on an unanswerable question",
+    "description": "The assigned paragraph does not answer the question, and the controller withheld an unsupported response.",
+    "observed": true,
+    "squad_id": "5ad541ad5b96ef001a10abee",
+    "question": "How is time not required to solve a problem calculated?",
+    "is_answerable": false,
+    "gold_answers": "",
+    "vanilla_first_response": "Time required to solve a problem is calculated as a function of the size of the instance, usually taken to be the size of the input in bits.",
+    "final_user_visible_output": "[ABSTAIN]",
+    "final_status": "abstained",
+    "terminal_reason": "invalid_output_no_repair_budget",
+    "action_sequence": "regenerate -> abstain",
+    "vanilla_token_f1": null,
+    "controller_token_f1": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "Time required to solve a problem is calculated as a function of the size of the instance, usually taken to be the size of the input in bits.",
+        "action": "regenerate",
+        "action_reason": "repair_invalid_output",
+        "no_answer_probability": 0.999968409538269,
+        "candidate_bad_probability": 0.9999946355819702,
+        "fused_hallucination_probability": 0.06470628969738043,
+        "support_score": 0.07758130133152008,
+        "relevance_score": 0.9996830090177536
+      },
+      {
+        "attempt": 2,
+        "candidate_response": "Time required to solve a problem is calculated as a function of the size of the instance, usually taken to be the size of the input in bits.",
+        "action": "abstain",
+        "action_reason": "invalid_output_no_repair_budget",
+        "no_answer_probability": 0.999968409538269,
+        "candidate_bad_probability": 0.9999946355819702,
+        "fused_hallucination_probability": 0.06470628969738043,
+        "support_score": 0.07758130133152008,
+        "relevance_score": 0.9996830090177536
+      }
+    ]
+  },
+  {
+    "category": "Successful diagnostic regeneration",
+    "description": "The controller rejected the first candidate, regenerated once with diagnostic feedback, and improved answer quality.",
+    "observed": true,
+    "squad_id": "5730131c947a6a140053d052",
+    "question": "What did al-Gama'a al-Islamiyya use to get its way?",
+    "is_answerable": true,
+    "gold_answers": "violence | violence | violence",
+    "vanilla_first_response": "Al-Gama'a al-Islamiyya used violence to get its way. [ABSTAIN] If you need further assistance or an",
+    "final_user_visible_output": "Violence.",
+    "final_status": "accepted",
+    "terminal_reason": "passed_calibrated_quality_and_answerability_gates",
+    "action_sequence": "regenerate -> accept",
+    "vanilla_token_f1": 0.125,
+    "controller_token_f1": 1.0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "Al-Gama'a al-Islamiyya used violence to get its way. [ABSTAIN] If you need further assistance or an",
+        "action": "regenerate",
+        "action_reason": "refusal_but_answerable",
+        "no_answer_probability": 0.022687207907438278,
+        "candidate_bad_probability": 0.0035892275627702475,
+        "fused_hallucination_probability": 0.79176302506741,
+        "support_score": 0.0,
+        "relevance_score": 0.0
+      },
+      {
+        "attempt": 2,
+        "candidate_response": "Violence.",
+        "action": "accept",
+        "action_reason": "passed_calibrated_quality_and_answerability_gates",
+        "no_answer_probability": 0.022687207907438278,
+        "candidate_bad_probability": 0.061316654086112976,
+        "fused_hallucination_probability": 0.5532477735235503,
+        "support_score": 0.0007359199225902557,
+        "relevance_score": 5.1134181200872587e-05
+      }
+    ]
+  },
+  {
+    "category": "Protective abstention after an unsafe first answer",
+    "description": "Vanilla generation answered an unanswerable question, but the controller's final output was abstention.",
+    "observed": true,
+    "squad_id": "5ad3ade2604f3c001a3fec18",
+    "question": "What wasn't Marin's orders?",
+    "is_answerable": false,
+    "gold_answers": "",
+    "vanilla_first_response": "Marin's orders weren't to limit the record of French claims to the burial of lead plates.",
+    "final_user_visible_output": "[ABSTAIN]",
+    "final_status": "abstained",
+    "terminal_reason": "evidence_predicted_unanswerable",
+    "action_sequence": "abstain",
+    "vanilla_token_f1": null,
+    "controller_token_f1": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "Marin's orders weren't to limit the record of French claims to the burial of lead plates.",
+        "action": "abstain",
+        "action_reason": "evidence_predicted_unanswerable",
+        "no_answer_probability": 0.9999488592147827,
+        "candidate_bad_probability": 0.9958215951919556,
+        "fused_hallucination_probability": 0.086593554409019,
+        "support_score": 0.0017279797466471791,
+        "relevance_score": 0.9990421052721113
+      }
+    ]
+  },
+  {
+    "category": "False abstention on an answerable question",
+    "description": "The question was answerable from its paragraph, but the controller withheld the response.",
+    "observed": true,
+    "squad_id": "5728f9882ca10214002dab5d",
+    "question": "The innate immune system responds in a generic way, meaning it is what?",
+    "is_answerable": true,
+    "gold_answers": "non-specific | non-specific | non-specific",
+    "vanilla_first_response": "non-specific",
+    "final_user_visible_output": "[ABSTAIN]",
+    "final_status": "abstained",
+    "terminal_reason": "evidence_predicted_unanswerable",
+    "action_sequence": "abstain",
+    "vanilla_token_f1": 1.0,
+    "controller_token_f1": 0.0,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "non-specific",
+        "action": "abstain",
+        "action_reason": "evidence_predicted_unanswerable",
+        "no_answer_probability": 0.9210644364356995,
+        "candidate_bad_probability": 0.6100733876228333,
+        "fused_hallucination_probability": 0.31070161908607663,
+        "support_score": 0.001172621501609683,
+        "relevance_score": 0.0001708162547890601
+      }
+    ]
+  },
+  {
+    "category": "Accepted unsupported answer",
+    "description": "The SQuAD-v2 item is unanswerable from its assigned paragraph, but the controller still delivered a response.",
+    "observed": true,
+    "squad_id": "5ad02de177cf76001a686d14",
+    "question": " When did the age of Imperialism end?",
+    "is_answerable": false,
+    "gold_answers": "",
+    "vanilla_first_response": "[ABSTAIN] The document does not provide information on when the Age of Imperialism ended.",
+    "final_user_visible_output": "Middle of the 20th century.",
+    "final_status": "accepted",
+    "terminal_reason": "passed_calibrated_quality_and_answerability_gates",
+    "action_sequence": "regenerate -> accept",
+    "vanilla_token_f1": null,
+    "controller_token_f1": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "candidate_response": "[ABSTAIN] The document does not provide information on when the Age of Imperialism ended.",
+        "action": "regenerate",
+        "action_reason": "refusal_but_answerable",
+        "no_answer_probability": 0.4966065287590027,
+        "candidate_bad_probability": 0.00939823966473341,
+        "fused_hallucination_probability": 0.0666418585356547,
+        "support_score": 0.0,
+        "relevance_score": 0.0
+      },
+      {
+        "attempt": 2,
+        "candidate_response": "Middle of the 20th century.",
+        "action": "accept",
+        "action_reason": "passed_calibrated_quality_and_answerability_gates",
+        "no_answer_probability": 0.4966065287590027,
+        "candidate_bad_probability": 0.25456342101097107,
+        "fused_hallucination_probability": 0.18609012883691511,
+        "support_score": 0.008205806836485863,
+        "relevance_score": 0.0030122932849916038
+      }
+    ]
+  }
+]

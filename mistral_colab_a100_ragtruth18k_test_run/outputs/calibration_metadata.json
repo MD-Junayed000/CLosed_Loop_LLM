@@ -1,0 +1,13 @@
+{
+  "calibration_source": "out_of_fold_predictions_from_ragtruth_train_only",
+  "test_used_for_calibration": false,
+  "cev_temperature": 1.2526035340649477,
+  "iav_temperature": 1.2267326361034545,
+  "fusion_weight_cev": 0.5700000000000001,
+  "platt_a": 5.573984146118164,
+  "platt_b": -2.96116304397583,
+  "hallucination_threshold": 0.3515151515151515,
+  "abstain_threshold": 0.7871031431899604,
+  "final_cev_epochs": 4,
+  "final_iav_epochs": 3
+}

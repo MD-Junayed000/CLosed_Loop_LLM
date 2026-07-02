@@ -1,0 +1,6 @@
+policy,stage,answerability_accuracy,answerable_coverage,false_abstention_rate,unanswerable_abstention_accuracy,false_answer_rate,answerable_overall_f1,delivered_answerable_f1
+Vanilla Mistral,first_pass,0.7,0.916,0.08399999999999996,0.484,0.516,0.5807293566277278,0.6339840137857291
+Answerability gate only,first_pass,0.854,0.828,0.17200000000000004,0.88,0.12,0.5359069500487996,0.6472306160009657
+External verification without CEV/IAV,first_pass,0.856,0.824,0.17600000000000005,0.888,0.112,0.5356402833821329,0.6500488875996758
+Full signals with CEV/IAV,first_pass,0.852,0.82,0.18000000000000005,0.884,0.116,0.5352402833821329,0.6527320529050401
+Full multi-action Controller-v5,multi_action,0.859,0.858,0.14200000000000002,0.86,0.14,0.5565573061254714,0.648668188957426

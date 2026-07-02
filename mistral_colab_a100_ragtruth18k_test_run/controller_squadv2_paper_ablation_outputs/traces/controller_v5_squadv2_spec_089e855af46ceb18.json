@@ -1,0 +1,31 @@
+{
+  "controller_code_version": "controller_v5_squadv2_paper_mistral7b_ablation_v2",
+  "dataset": "rajpurkar/squad_v2:validation",
+  "dataset_fingerprint": "461c0301636b3e0b",
+  "context_mode": "assigned_paragraph_fixed",
+  "answerable_rows": 500,
+  "unanswerable_rows": 500,
+  "excluded_previous_v4": {
+    "answerable": 300,
+    "unanswerable": 300
+  },
+  "excluded_previous_v5": {
+    "answerable": 400,
+    "unanswerable": 400
+  },
+  "selection_seed": 7071,
+  "probe_weights_sha256": "d935ff81d01c8f26a17725e34a2f2b0dcc52d3056a526e6fcd49c3d95257c731",
+  "answerability_model_sha256": "2770482cbb3bc5896d7ac44006695f25651ab1d9f2da3904850ea8cf25831fd6",
+  "candidate_quality_model_sha256": "9fc81fe54a5f8116ee6410aa7f84218534a3de2632e5dd1a9649790e328477b1",
+  "thresholds": {
+    "retrieval_failure": 0.4799999999999999,
+    "no_answer": 0.525,
+    "candidate_accept": 0.95,
+    "candidate_abstain": 0.95
+  },
+  "action_budget": {
+    "max_attempts": 3,
+    "max_regenerations": 1,
+    "max_reretrievals": 0
+  }
+}

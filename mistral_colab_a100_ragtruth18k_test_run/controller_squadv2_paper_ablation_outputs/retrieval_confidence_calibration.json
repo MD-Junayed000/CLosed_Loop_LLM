@@ -1,0 +1,19 @@
+{
+  "source": "rajpurkar/squad_v2:train_answerable",
+  "n_examples": 1500,
+  "evaluation_split_used": false,
+  "initial_retrieval": "BGE dense plus cross-encoder reranking",
+  "corrective_retrieval": "dense plus BM25 RRF plus cross-encoder reranking",
+  "failure_prevalence": 0.076,
+  "oof_failure_auroc": 0.920356446672236,
+  "gold_answer_recall_at_k": 0.924,
+  "gold_context_hit_at_k": 0.9053333333333333,
+  "retrieval_failure_threshold": 0.4799999999999999,
+  "threshold_selection": {
+    "threshold": 0.4799999999999999,
+    "balanced_accuracy": 0.8608452950558214,
+    "failure_f1": 0.43923240938166314,
+    "failure_recall": 0.9035087719298246
+  },
+  "disjoint_from_controller_dev": true
+}
